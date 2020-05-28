@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function App() {
+import { useFetch } from './custom-hooks';
+
+const App = () => {
+  const { response } = useFetch('http://localhost:8080/polluters', {});
+  console.log(response);
+
   const Title = styled.h1`
     color: red;
   `;
@@ -11,6 +16,6 @@ function App() {
       <Title>Top twenty polluters</Title>
     </>
   );
-}
+};
 
 export default App;

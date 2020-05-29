@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6653d7e83de6398ae6900163f7a1b6d1",
+    "revision": "aed2a47f96cb765fe02486441776247b",
     "url": "/top-20-polluters/index.html"
   },
   {
-    "revision": "3c620b76207850cd3af4",
+    "revision": "e908e6bd90918f257ac6",
     "url": "/top-20-polluters/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/top-20-polluters/static/js/2.04196f0d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3c620b76207850cd3af4",
-    "url": "/top-20-polluters/static/js/main.bbf4237e.chunk.js"
+    "revision": "e908e6bd90918f257ac6",
+    "url": "/top-20-polluters/static/js/main.bf18dd42.chunk.js"
   },
   {
     "revision": "3ea4fb4a87cd9a67c0a2",

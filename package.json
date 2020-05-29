@@ -15,9 +15,10 @@
   "scripts": {
     "start:dev": "yarn json-server db.json & yarn start",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=\"/top-20-polluters\" react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "PUBLIC_URL=\"/top-20-polluters\" gh-pages -d ./build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }

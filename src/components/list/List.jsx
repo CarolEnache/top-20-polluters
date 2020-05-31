@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { Modal, Button } from '../modal';
+import { Modal, ModalButton } from '../modal';
 import { Card } from '../card';
+import { UnorderedList, ListItem } from './styled';
 
 const List = ({ data = [] }) => {
   const [modalId, setModalId] = useState();
 
   return (
-    <ul>
+    <UnorderedList>
       {!!data &&
         data.map((polluter) => {
           const keys = Object.keys(polluter);
           return (
-            <li key={polluter.Rank}>
+            <ListItem key={polluter.Rank}>
               {' '}
-              <Button
+              <ModalButton
                 keys={keys}
                 polluter={polluter}
                 onClick={() => setModalId(polluter.Rank)}
@@ -24,10 +25,10 @@ const List = ({ data = [] }) => {
                 onClose={() => setModalId()}
                 content={<Card keys={keys} polluter={polluter} />}
               />
-            </li>
+            </ListItem>
           );
         })}
-    </ul>
+    </UnorderedList>
   );
 };
 

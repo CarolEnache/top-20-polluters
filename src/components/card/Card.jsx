@@ -1,11 +1,12 @@
 import React from 'react';
+import { Element } from './styled';
 
 const Card = ({ keys = [], polluter }) => {
   return keys.map((key) => (
-    <span key={key}>
-      <strong>{key}:</strong>
+    <Element key={key}>
+      <strong>{key}: </strong>
       {polluter[key]}
-    </span>
+    </Element>
   ));
 };
 

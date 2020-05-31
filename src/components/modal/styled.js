@@ -72,4 +72,24 @@ export const ModalBody = styled.div`
 
 export const ModalContent = styled.div`
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CompanyName = styled.span`
+  display: block;
+  font-weight: bold;
+  font-size: 0.8rem;
+`;
+
+export const Button = styled.button`
+  width: 100%;
+  background: transparent;
+  padding: 1rem;
+  border-radius: 10px;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 0 5px #888;
+  }
 `;

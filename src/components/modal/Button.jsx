@@ -1,16 +1,18 @@
 import React from 'react';
-
-const Button = ({ keys = [], polluter, onClick }) => {
+import { Button, CompanyName } from './styled';
+const ModalButton = ({ keys = [], polluter, onClick }) => {
   return keys.map((key) => {
     if (key === 'Name') {
+      const separate = polluter[key].split(',');
       return (
-        <button onClick={onClick} key={key}>
-          {polluter[key]}
-        </button>
+        <Button onClick={onClick} key={key}>
+          <CompanyName>{separate[0]}</CompanyName>
+          {separate[1]}
+        </Button>
       );
     }
     return null;
   });
 };
 
-export default Button;
+export default ModalButton;

@@ -1,9 +1,37 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import App from './App';
+import { mockResponse } from './mock';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/Top twenty polluters/i);
-  expect(linkElement).toBeInTheDocument();
+import { List } from './components/list';
+
+afterEach(cleanup);
+
+describe('App', () => {
+  it('render', () => {
+    const { getByText, getByTestId } = render(<App />);
+
+    const Title = getByText(
+      'What do we know about the top 20 global polluters?'
+    );
+
+    const SubTitle = getByTestId('subtitle');
+
+    expect(Title).toBeInTheDocument();
+    expect(SubTitle).toBeInTheDocument();
+  });
+
+  it('fetching the data and displays a List of buttons', async () => {
+    jest.spyOn(global, 'fetch').mockImplementation(() => {
+      Promise.resolve({
+        json: () => Promise.resolve(mockResponse),
+      });
+    });
+
+    const { queryAllByTestId } = render(
+      <List data={mockResponse} data-testid='list-of-buttons' />
+    );
+
+    expect(await queryAllByTestId('modal-button')).toHaveLength(2);
+  });
 });

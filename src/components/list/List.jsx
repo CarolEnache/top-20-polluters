@@ -12,7 +12,7 @@ const List = ({ data = [] }) => {
         data.map((polluter) => {
           const keys = Object.keys(polluter);
           return (
-            <ListItem key={polluter.Rank}>
+            <ListItem key={polluter.Rank} data-testid='modal-button'>
               {' '}
               <ModalButton
                 keys={keys}

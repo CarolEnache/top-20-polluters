@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Container>
       <Title>What do we know about the top 20 global polluters?</Title>
-      <SubTitle>
+      <SubTitle data-testid='subtitle'>
         Compare details about the fossil fuel firms behind a third of carbon
         emissions since 1965, just by{' '}
         <strong>clicking on the company name</strong>.

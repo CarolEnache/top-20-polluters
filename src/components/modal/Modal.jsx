@@ -26,7 +26,10 @@ const Modal = ({ content, onClose, id, modalId }) => {
 
   return !correctModal ? null : (
     <ModalContainer onClick={onClose}>
-      <ModalDialog onClick={(e) => e.stopPropagation()}>
+      <ModalDialog
+        onClick={(e) => e.stopPropagation()}
+        data-testid='modal-dialog'
+      >
         <ModalHeader>
           <ModalClose onClick={onClose}>&times;</ModalClose>
         </ModalHeader>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import App from './App';
 import { mockResponse } from './mock';
 
@@ -28,10 +28,16 @@ describe('App', () => {
       });
     });
 
-    const { queryAllByTestId } = render(
+    const { queryAllByTestId, getByText, getByTestId } = render(
       <List data={mockResponse} data-testid='list-of-buttons' />
     );
 
     expect(await queryAllByTestId('modal-button')).toHaveLength(2);
+    expect(await getByText('Chevron')).toBeInTheDocument();
+
+    const modalButton = await getByText('Chevron');
+    fireEvent.click(modalButton);
+
+    expect(getByTestId('modal-dialog')).toBeInTheDocument();
   });
 });

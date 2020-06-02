@@ -3,7 +3,7 @@ import { Element } from './styled';
 
 const Card = ({ keys = [], polluter }) => {
   return keys.map((key) => (
-    <Element key={key}>
+    <Element key={key} data-testid='element'>
       <strong>{key}: </strong>
       {polluter[key]}
     </Element>

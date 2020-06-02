@@ -7,12 +7,12 @@ const List = ({ data = [] }) => {
   const [modalId, setModalId] = useState();
 
   return (
-    <UnorderedList>
+    <UnorderedList data-testid='list'>
       {!!data &&
         data.map((polluter) => {
           const keys = Object.keys(polluter);
           return (
-            <ListItem key={polluter.Rank} data-testid='modal-button'>
+            <ListItem key={polluter.Rank} data-testid='list-item'>
               {' '}
               <ModalButton
                 keys={keys}

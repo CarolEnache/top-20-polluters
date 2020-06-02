@@ -32,7 +32,7 @@ describe('App', () => {
       <List data={mockResponse} data-testid='list-of-buttons' />
     );
 
-    expect(await queryAllByTestId('modal-button')).toHaveLength(2);
+    expect(await queryAllByTestId('list-item')).toHaveLength(2);
     expect(await getByText('Chevron')).toBeInTheDocument();
 
     const modalButton = await getByText('Chevron');

@@ -5,7 +5,7 @@ const ModalButton = ({ keys = [], polluter, onClick }) => {
     if (key === 'Name') {
       const separate = polluter[key].split(',');
       return (
-        <Button onClick={onClick} key={key}>
+        <Button onClick={onClick} key={key} data-testid='modal-button'>
           <CompanyName>{separate[0]}</CompanyName>
           {separate[1]}
         </Button>

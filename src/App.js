@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useFetch } from './custom-hooks';
+import { useFetch } from './hooks';
 
 import { List } from './components/list';
 

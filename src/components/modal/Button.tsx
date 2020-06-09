@@ -1,7 +1,14 @@
 import React from 'react';
 import { Button, CompanyName } from './styled';
-const ModalButton = ({ keys = [], polluter, onClick }) => {
-  return keys.map((key) => {
+
+interface ModalButtonProps {
+  keys: string[];
+  polluter: string;
+  onClick: () => {};
+}
+
+const ModalButton = ({ keys = [], polluter, onClick }: ModalButtonProps) => {
+  return keys.map((key: any) => {
     if (key === 'Name') {
       const separate = polluter[key].split(',');
       return (

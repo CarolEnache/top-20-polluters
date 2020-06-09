@@ -8,14 +8,21 @@ import {
   ModalContent,
 } from './styled';
 
-const Modal = ({ content, onClose, id, modalId }) => {
+interface ModalProps {
+  content: React.ReactNode;
+  onClose: () => {};
+  id: number;
+  modalId: number;
+}
+
+const Modal = ({ content, onClose, id, modalId }: ModalProps) => {
   useEffect(() => {
     document.addEventListener('keydown', keydownHandler);
     return () => document.removeEventListener('keydown', keydownHandler);
   });
 
   const correctModal = id === modalId;
-  function keydownHandler({ key }) {
+  function keydownHandler({ key }: any) {
     switch (key) {
       case 'Escape':
         onClose();
@@ -27,7 +34,7 @@ const Modal = ({ content, onClose, id, modalId }) => {
   return !correctModal ? null : (
     <ModalContainer onClick={onClose}>
       <ModalDialog
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: any) => e.stopPropagation()}
         data-testid='modal-dialog'
       >
         <ModalHeader>

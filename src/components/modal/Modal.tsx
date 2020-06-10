@@ -11,8 +11,8 @@ import {
 interface ModalProps {
   content: React.ReactNode;
   onClose: () => {};
-  id: number;
-  modalId: number;
+  id?: number;
+  modalId?: number;
 }
 
 const Modal = ({ content, onClose, id, modalId }: ModalProps) => {

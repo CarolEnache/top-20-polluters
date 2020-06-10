@@ -1,21 +1,18 @@
 import React from 'react';
 import { Button, CompanyName } from './styled';
-
-interface Polluter {
-  Name: string;
-}
+import { Polluter } from '../list/List';
 interface ModalButtonProps {
   keys: string[];
-  polluter: Polluter;
-  onClick: (f: number) => {};
+  polluter: Polluter | any;
+  onClick: () => number;
 }
 
 const ModalButton = ({ keys = [], polluter, onClick }: ModalButtonProps) => {
-  return keys.map((key: string) => {
+  const button = keys.map((key: string, index) => {
     if (key === 'Name') {
       const separate = polluter[key].split(',');
       return (
-        <Button onClick={onClick} key={key} data-testid='modal-button'>
+        <Button onClick={onClick} key={index} data-testid='modal-button'>
           <CompanyName>{separate[0]}</CompanyName>
           {separate[1]}
         </Button>
@@ -23,6 +20,7 @@ const ModalButton = ({ keys = [], polluter, onClick }: ModalButtonProps) => {
     }
     return null;
   });
+  return <>{button}</>;
 };
 
 export default ModalButton;

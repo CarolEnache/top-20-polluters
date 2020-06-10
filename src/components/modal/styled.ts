@@ -1,5 +1,10 @@
 import styled, { keyframes } from 'styled-components';
 
+interface ElementProps {
+  children?: React.ReactNode;
+  key?: number;
+}
+
 const appear = keyframes`
   from {
     opacity: 0;
@@ -18,7 +23,7 @@ const slideIn = keyframes`
   }
 `;
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled.div<ElementProps>`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -34,7 +39,7 @@ export const ModalContainer = styled.div`
   animation-duration: 300ms;
 `;
 
-export const ModalDialog = styled.div`
+export const ModalDialog = styled.div<ElementProps>`
   width: 100%;
   max-width: 550px;
   background: white;
@@ -52,7 +57,7 @@ export const ModalDialog = styled.div`
   animation-duration: 0.5s;
 `;
 
-export const ModalHeader = styled.div`
+export const ModalHeader = styled.div<ElementProps>`
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -60,29 +65,29 @@ export const ModalHeader = styled.div`
   justify-content: space-between;
 `;
 
-export const ModalClose = styled.span`
+export const ModalClose = styled.span<ElementProps>`
   cursor: pointer;
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
 `;
 
-export const ModalBody = styled.div`
+export const ModalBody = styled.div<ElementProps>`
   overflow: auto;
 `;
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.div<ElementProps>`
   padding: 1rem;
   display: flex;
   flex-direction: column;
 `;
 
-export const CompanyName = styled.span`
+export const CompanyName = styled.span<ElementProps>`
   display: block;
   font-weight: bold;
   font-size: 0.8rem;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<ElementProps>`
   width: 100%;
   background: transparent;
   padding: 1rem;

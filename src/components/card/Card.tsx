@@ -1,19 +1,21 @@
 import React from 'react';
 import { Element } from './styled';
 
+import { Polluter } from '../list/List';
+
 interface CardProps {
   keys: string[];
-  polluter: string;
+  polluter: Polluter;
 }
 
 const Card = ({ keys = [], polluter }: CardProps) => {
-  console.log(polluter, keys);
-  return keys.map((key: any) => (
-    <Element key={key} data-testid='element'>
+  const content = keys.map((key, index) => (
+    <Element key={index} data-testid='element'>
       <strong>{key}: </strong>
       {polluter[key]}
     </Element>
   ));
+  return <>{content}</>;
 };
 
 export default Card;
